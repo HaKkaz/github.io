@@ -6,15 +6,28 @@
   <link href="https://hakkaz.github.io/atom.xml" rel="self"/>
   
   <link href="https://hakkaz.github.io/"/>
-  <updated>2021-01-09T09:06:39.015Z</updated>
+  <updated>2021-01-09T09:09:22.622Z</updated>
   <id>https://hakkaz.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Aann Lin</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>測試</title>
+    <link href="https://hakkaz.github.io/2021/01/09/%E6%B8%AC%E8%A9%A6/"/>
+    <id>https://hakkaz.github.io/2021/01/09/%E6%B8%AC%E8%A9%A6/</id>
+    <published>2021-01-09T09:09:22.000Z</published>
+    <updated>2021-01-09T09:09:22.622Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Test</title>
