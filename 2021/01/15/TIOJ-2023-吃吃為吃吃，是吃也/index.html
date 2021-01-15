@@ -243,6 +243,11 @@
         <div class="post-content">
             <p>原題網址 : <a target="_blank" rel="noopener" href="https://tioj.ck.tp.edu.tw/problems/2023">https://tioj.ck.tp.edu.tw/problems/2023</a></p>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>給你 $n$ 種食材以及 $m$ 種好吃度為 $v_i$ 的食材搭配方式，<br>在這 $2^n-1$ 種非空食材組合當中如果一個組合包含第 $i$ 種搭配方式就會增加 $v_i$ 的好吃度。<br>現在你要依序做 $2^n-1$ 次種組合，第 $x$ 次做的組合若好吃度為 $sum_x$ 則<strong>總好吃度</strong>增加 $x \times sum_x$。<br>求在所有製作順序中最大的<strong>總好吃度</strong>。</p>
+<ul>
+<li>$n \le 22$</li>
+<li>$m \le 10^5$</li>
+<li>$-100 \le v_i \le 100$</li>
+</ul>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>首先我們會發現，只要求出所有組合的好吃度，再讓好吃度最小的先做就會是最大的<strong>總好吃度</strong>。<br>那問題就只剩下怎麼求出所有組合的好吃度了。</p>
 <p>首先我想到的是一個顯然TLE的作法，對於每種組合去枚舉他的所有子集合並把好吃度加起來。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span> ; i&lt;(<span class="number">1</span>&lt;&lt;n) ; ++i)&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=i ; j ; j=(j<span class="number">-1</span>)&amp;i)&#123;</span><br><span class="line">		tot[i] += dp[j];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
