@@ -60,7 +60,7 @@
 
   
   <url>
-    <loc>https://hakkaz.github.io/tags/Divide-and-Conquer/</loc>
+    <loc>https://hakkaz.github.io/tags/Trie/</loc>
     <lastmod>2021-01-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -81,6 +81,13 @@
   </url>
   
   <url>
+    <loc>https://hakkaz.github.io/tags/Mo-s-algorithm/</loc>
+    <lastmod>2021-01-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hakkaz.github.io/tags/%E7%94%9F%E6%B4%BB%E8%A8%98%E4%BA%8B/</loc>
     <lastmod>2021-01-18</lastmod>
     <changefreq>daily</changefreq>
@@ -95,14 +102,7 @@
   </url>
   
   <url>
-    <loc>https://hakkaz.github.io/tags/Trie/</loc>
-    <lastmod>2021-01-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hakkaz.github.io/tags/Mo-s-algorithm/</loc>
+    <loc>https://hakkaz.github.io/tags/Divide-and-Conquer/</loc>
     <lastmod>2021-01-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
