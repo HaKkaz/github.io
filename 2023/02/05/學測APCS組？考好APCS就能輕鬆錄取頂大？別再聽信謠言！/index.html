@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="google-site-verification" content="Wtp35xaWUpwb2oQZZDEs-_8z7BxYVCG_Xcd3xPspuM4" />
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="HaKkaz">
+
+
+
+
+
+<title>學測APCS組？考好APCS就能輕鬆錄取頂大？別再聽信謠言！ | HaKkaz&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+        
+    
+
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="HaKkaz's Blog" type="application/atom+xml">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">HaKkaz&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">HaKkaz&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">學測APCS組？考好APCS就能輕鬆錄取頂大？別再聽信謠言！</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">HaKkaz</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">February 5, 2023&nbsp;&nbsp;16:14:31</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/APCS/">APCS</a>
+                            
+                        </span>
+                    
+                    <span id="/2023/02/05/%E5%AD%B8%E6%B8%ACAPCS%E7%B5%84%EF%BC%9F%E8%80%83%E5%A5%BDAPCS%E5%B0%B1%E8%83%BD%E8%BC%95%E9%AC%86%E9%8C%84%E5%8F%96%E9%A0%82%E5%A4%A7%EF%BC%9F%E5%88%A5%E5%86%8D%E8%81%BD%E4%BF%A1%E8%AC%A0%E8%A8%80%EF%BC%81/" class="leancloud-visitors view" data-flag-title="學測APCS組？考好APCS就能輕鬆錄取頂大？別再聽信謠言！">
+                      <em class="post-meta-item-text">Pageviews:</em>
+                      <i class="leancloud-visitors-count">loading</i>
+                    </span>
+                </div>
+            
+        </header>
+
+        
+        <div class="post-content">
+            <h1 id="作者介紹"><a href="#作者介紹" class="headerlink" title="作者介紹"></a>作者介紹</h1><hr>
+<ul>
+<li>110學年度以特殊選才管道錄取陽明交通大學資訊工程學系，詳細經歷請查看連結(<a href="https://hakkaz.github.io/about">https://hakkaz.github.io/about</a>)</li>
+<li>目前於 <strong>AnnCode！安可程式</strong> 擔任 APCS 家教</li>
+<li>APCS 實作滿級分，參加程式競賽多年、教學經驗豐富，已帶領許多學生在 APCS 取得佳績</li>
+<li><a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100089378332482"><strong>AnnCode！安可程式</strong></a> 是專業 APCS 家教團隊，歡迎點擊連結了解更多！</li>
+</ul>
+<h1 id="什麼是「APCS大學程式先修檢測」？"><a href="#什麼是「APCS大學程式先修檢測」？" class="headerlink" title="什麼是「APCS大學程式先修檢測」？"></a>什麼是「APCS大學程式先修檢測」？</h1><hr>
+<p>「APCS 大學程式先修檢測」是一個目前最具公信力的高中生資訊能力檢定，分為程式觀念題以及程式實作題，各占五級分，滿分十級分。自 107 年起，學測個人申請開始採計 APCS 資訊能力檢測，直至今日 112 學年共有 59 個資訊相關校系共 162 個名額參與其中，包括台灣大學資工系、陽明交通大學資工系、清華大學資工系等頂大都已確定加入。</p>
+<h1 id="學測-APCS-組是什麼？"><a href="#學測-APCS-組是什麼？" class="headerlink" title="學測 APCS 組是什麼？"></a>學測 APCS 組是什麼？</h1><hr>
+<p>就如同上一段所述，現在有許多資訊相關科系加開名額給予有參加 APCS 檢定的同學作為額外的入學管道，APCS 組藉由「降低學測五標門檻，增加 APCS 門檻」的方法適性楊才，挖掘對程式設計有熱忱的同學進入資工系就讀，也讓部分偏科生能以優異的資訊能力錄取理想校系。</p>
+<p>以 112 學年度學測個人申請為例：</p>
+<p><strong>陽明交通大學資訊工程學系乙組</strong>學測的各科門檻為：國文<font color='red'>均標</font>、英文<font color='red'>前標</font>、數Ａ<font color='red'>頂標</font>、自然<font color='red'>前標</font>。</p>
+<p><strong>陽明交通大學資訊工程學系 APCS 組</strong>學測的各科門檻為：數Ａ<font color='red'>前標</font>、自然<font color='red'>均標</font>、<font color='red'>APCS 觀念題4級分</font>、<font color='red'>APCS 實作題4級分</font>。</p>
+<p><img src="NYCU_APCS.png" alt="NYCU_APCS.png"></p>
+<h1 id="頂大-APCS-組跟你想的不一樣！"><a href="#頂大-APCS-組跟你想的不一樣！" class="headerlink" title="頂大 APCS 組跟你想的不一樣！"></a>頂大 APCS 組跟你想的不一樣！</h1><hr>
+<h2 id="補習班噱頭"><a href="#補習班噱頭" class="headerlink" title="補習班噱頭"></a>補習班噱頭</h2><p>許多補習班都會利用 APCS 申請頂大資工系做為噱頭，如「<em>APCS</em> 檢定考得好，搶下清華大學、交通大學資工科系 <em>APCS</em> 組專屬入學門票！」等等的標語讓家長及學生暈頭轉向，但頂大 APCS 組真的只要考好APCS 就能錄取嗎？</p>
+<h2 id="頂大APCS組的真相"><a href="#頂大APCS組的真相" class="headerlink" title="頂大APCS組的真相"></a>頂大APCS組的真相</h2><p>因為 APCS 的門檻限制，幾乎所有學校的 APCS 組學測門檻及錄取分數相較同科系都會略有下降，但頂大資工系的 APCS 組雖然學測門檻略有放寬，錄取分數卻不見得有所下降，甚至在面試這關難度，堪比第二次特殊選才，許多資訊高手都會參與其中。</p>
+<p>依照筆者的經驗，錄取清大、交大資工系 APCS 組的同學，除了 <strong>APCS 實作幾乎都是滿級分以外，多數同學都有競賽成績或是科展成績</strong>，如：資訊學科能力競賽、資訊安全競賽、科展或是旺宏科學獎等等。</p>
+<p>另外，筆者想分享 110 學年度台大資工 APCS 組的神奇現象，當年申請台大資工 APCS 組的學測門檻居然比一般組還要高分，而且錄取的同學幾乎都有進入資訊奧林匹亞第一階段。雖然 111 學年度並沒有再次出現如此競爭的局面，不過目前<strong>台大資工 APCS 組僅有開設 3 個名額，所以同學還是要知道其困難程度並不一般。</strong></p>
+<p>因此，想要利用 APCS 組錄取頂大資工的同學，除了 APCS 實作題以外，還要多多充實其他資訊相關的備審資料，才能讓自己立於不敗之地唷！</p>
+<h2 id="如何挑選-APCS-補習班"><a href="#如何挑選-APCS-補習班" class="headerlink" title="如何挑選 APCS 補習班"></a>如何挑選 APCS 補習班</h2><p>現在市面上這麼多 APCS 補習班，要不是老師根本沒考過 APCS，就是連 APCS的考試方向都不清楚，因此 AnnCode！之後會再寫一篇文章與大家分享，究竟如何挑選 APCS 補習班，才可以找到足夠專業的師資，避免自己花了大把鈔票又沒有讓孩子得到應有的學習成效！</p>
+<p>如果對 APCS、資工系特殊選才相關議題有興趣記得追蹤、按讚 <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100089378332482">AnnCode！安可程式教育</a> 的臉書粉絲團！</p>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><hr>
+<p>文章的最後，希望讀者都能在這篇文章了解到更多關於 APCS 的相關訊息，若想要持續關注APCS以及程式解題的相關議題，歡迎追蹤 <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100089378332482">AnnCode！安可程式</a> 的 FB 粉絲團。</p>
+<h1 id="文章作者"><a href="#文章作者" class="headerlink" title="文章作者"></a>文章作者</h1><hr>
+<p>全文由 <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100089378332482">AnnCode！安可程式教育</a> 撰寫，轉載文章請註明出處並附上本文連結。</p>
+<p><strong>AnnCode！安可程式教育</strong>是專業 APCS 家教團隊，超強師資陣容，團隊中每位老師皆為 APCS 實作滿級分高手，並且曾經參與 「TOI 高中資訊奧林匹亞競賽」、「ICPC 國際大學生程式設計競賽」等程式競賽，絕對是不可多得的一流師資。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>HaKkaz</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2021 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB/"># 經驗分享</a>
+                    
+                        <a href="/tags/APCS/"># APCS</a>
+                    
+                        <a href="/tags/%E5%AD%B8%E7%BF%92%E6%AD%B7%E7%A8%8B/"># 學習歷程</a>
+                    
+                        <a href="/tags/%E5%AD%B8%E6%B8%AC%E7%94%B3%E8%AB%8B/"># 學測申請</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2023/06/07/2023-%E5%A4%A7%E4%BA%8C%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E5%AF%A6%E7%BF%92%E7%94%B3%E8%AB%8B%E6%85%98%E6%B3%81-AICS%E9%9D%A2%E8%A9%A6%E5%BF%83%E5%BE%97/">2023 大二軟體工程師實習申請慘況+AICS面試心得</a>
+            
+            
+            <a class="next" rel="next" href="/2023/02/02/APCS%E7%B7%B4%E7%BF%92%E6%96%B9%E6%B3%95%EF%BC%8C%E4%BD%BF%E7%94%A8Atcoder%E6%8F%90%E5%8D%87APCS%E5%AF%A6%E5%8A%9B/">APCS實作題練習方法，在Atcoder提升你的APCS實作！</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© HaKkaz | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a>
+        </span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

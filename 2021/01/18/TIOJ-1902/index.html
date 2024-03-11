@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="google-site-verification" content="Wtp35xaWUpwb2oQZZDEs-_8z7BxYVCG_Xcd3xPspuM4" />
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="HaKkaz">
+
+
+
+
+
+<title>TIOJ 1902 「殿仁．王，不認識，誰啊？」，然後他就死了…… | HaKkaz&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+        
+    
+
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="HaKkaz's Blog" type="application/atom+xml">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">HaKkaz&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">HaKkaz&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">TIOJ 1902 「殿仁．王，不認識，誰啊？」，然後他就死了……</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">HaKkaz</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">January 18, 2021&nbsp;&nbsp;23:19:52</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%AB%B6%E6%8A%80%E7%A8%8B%E5%BC%8F/">競技程式</a>
+                            
+                        </span>
+                    
+                    <span id="/2021/01/18/TIOJ-1902/" class="leancloud-visitors view" data-flag-title="TIOJ 1902 「殿仁．王，不認識，誰啊？」，然後他就死了……">
+                      <em class="post-meta-item-text">Pageviews:</em>
+                      <i class="leancloud-visitors-count">loading</i>
+                    </span>
+                </div>
+            
+        </header>
+
+        
+        <div class="post-content">
+            <p>原題網址 : <a target="_blank" rel="noopener" href="https://tioj.ck.tp.edu.tw/problems/1902">https://tioj.ck.tp.edu.tw/problems/1902</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>給你長度為 $N$ 的序列 $a$ 及 $Q$ 筆詢問，<br>每次詢問一個區間 $[l,r]$ ，求 $[l’,r’]$ 有最大的 $xor$ 值，且 $l \le l’ \le r’ \le r$。</p>
+<ul>
+<li>$[l,r]$ 的 $xor$ 值定義為區間內所有數字 $xor$ 起來。</li>
+<li>$N,M \le 1e5$</li>
+<li>$a_i \le 1e9$</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="step-1"><a href="#step-1" class="headerlink" title="step 1"></a>step 1</h3><p>首先我們要先會求出 $[1,n]$ 的最大 $xor$ 值子區間。<br>我們先假設 :<br>\begin{aligned}<br> A_i = a_1 \oplus a_2 \oplus …. \oplus a_i \<br>\end{aligned}<br>利用 $xor$ 兩次會抵消的性質，我們可以用 $A_{l-1} \oplus A_r$ 來求出 $[l,r]$ 的 $xor$ 值。</p>
+<p>接著我們套上01-字典樹(01-Trie)，然後從左到右插入$A_i$，每次利用字典樹求跟 $A_i$ 做 $xor$ 最大的值，最後取 $max$ 即是 $xor$ 值最大的子區間。</p>
+<p>說的簡單點，我們枚舉右界然後用字典樹快速的算出每個右界$xor$值最大的子區間，然後取 $max$。</p>
+<p>時間複雜度 : $O(NlogC)$。</p>
+<h3 id="step-2"><a href="#step-2" class="headerlink" title="step 2"></a>step 2</h3><p>接著我們要應付 $Q$ 筆詢問了。</p>
+<p>我一開始解題的時候思緒就一直往離線、莫隊去想，但是就是遲遲沒辦法解出來，最後只好去請求ZCK給點提示w</p>
+<p>套上莫隊最主要的問題是我們沒辦法在擴張、縮減區間的時候好好維護答案，左右界一直不規則的亂動，我們套入 step1 的方法就要一直重新把整個區間插入字典樹一次求答案，這樣還不如不要莫隊(X)</p>
+<p>既然我們不希望左右界一直不規則的亂動，我們就固定左界，然後讓右界單調吧。</p>
+<p>我們先把詢問分成兩種 :</p>
+<ol>
+<li><font color="#6F4E37"><strong>左右界在同一塊</strong></font></li>
+<li><font color="#6F4E37"><strong>左右界在不同一塊</strong></font></li>
+</ol>
+<p>對於第一種，我們直接暴力把它加入字典樹然後求得答案後再清空字典樹。<br>每次詢問費時 $O(\sqrt{N} logC)$。</p>
+<p>對於第二種，我們把左界在同一塊的一起做處理，讓它們依照右界遞增排序，並假設 $CL$ 是這些詢問中最大的左界，我們假設 $[L,R]$ 為當前字典樹所維護的區間，並令其為 $[CL,CL-1]$ (空區間)。<br>對於每個詢問擴張右界，擴張的同時，每擴張一格就求一次 $[CL , R]$ 的答案，記得把它存起來，因為接下來的每個詢問也嚴格涵蓋這些區間的答案。</p>
+<p><img src="image.png" alt="image"></p>
+<p>最後我們再把每個詢問的 $[QL_i ,  CL-1]$ 依序加進Trie裡面求答案，解決本次詢問後把 $[QL_i ,  CL-1]$ 的值從 Trie拔掉。</p>
+<h3 id="時間複雜度"><a href="#時間複雜度" class="headerlink" title="時間複雜度"></a>時間複雜度</h3><p>對於在同一塊的所有詢問最多擴張右界 $N$ 次，複雜度 $O(N log C)$ ，最多有 $\sqrt{N}$ 塊，所以擴張右界的總複雜度是 $O(N \sqrt{N} logC)$。</p>
+<p>然後每筆詢問都要把重新把 $[QL_i , CL-1]$ 加進去又拔出來各一次，由於 $QL_i$ 跟 $CL-1$ 一定在同一塊內，所以單次操作複雜度 $O(\sqrt{N})$，總複雜度最多 $O(Q \sqrt{N}logC)$。</p>
+<p>故總時間複雜度 : $O(N \sqrt{N} logC + Q \sqrt{N}logC)$。<br><del>(應該吧(? 有錯誤拜託告訴我&gt;&lt;’)</del></p>
+<h2 id="AC-code"><a href="#AC-code" class="headerlink" title="AC code"></a>AC code</h2><p>有點醜的code，但不知道怎麼寫好看一點qq</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SZ(x) (int)(x).size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> all(x) (x).begin(),(x).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IOS ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">50</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">query</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> l , r , bk , id;</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> query &amp;tmp)<span class="keyword">const</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> bk == tmp.bk ? r &lt; tmp.r : bk &lt; tmp.bk;</span><br><span class="line">	&#125;</span><br><span class="line">	query()&#123;&#125;</span><br><span class="line">&#125;Qs[maxn];</span><br><span class="line"><span class="keyword">int</span> a[maxn] , ans[maxn];</span><br><span class="line"></span><br><span class="line"><span class="comment">//01-Trie</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Trie</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	Trie *nxt[<span class="number">2</span>];</span><br><span class="line">	<span class="keyword">int</span> cnt ;</span><br><span class="line">	Trie()&#123;</span><br><span class="line">		nxt[<span class="number">0</span>] = nxt[<span class="number">1</span>] = <span class="literal">nullptr</span>;</span><br><span class="line">		cnt = <span class="number">0</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">		Trie *now = <span class="keyword">this</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> pos = <span class="number">31</span> ; pos &gt;= <span class="number">0</span> ; --pos)&#123;</span><br><span class="line">			<span class="keyword">bool</span> b = (x &gt;&gt; pos &amp; <span class="number">1</span>);</span><br><span class="line">			<span class="keyword">if</span>(now-&gt;nxt[b] == <span class="literal">nullptr</span>) now-&gt;nxt[b] = <span class="keyword">new</span> Trie();</span><br><span class="line">			now = now-&gt;nxt[b];</span><br><span class="line">			now-&gt;cnt++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">sub</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">		Trie *now = <span class="keyword">this</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> pos = <span class="number">31</span> ; pos &gt;= <span class="number">0</span> ; --pos)&#123;</span><br><span class="line">			<span class="keyword">bool</span> b = (x &gt;&gt; pos &amp; <span class="number">1</span>);</span><br><span class="line">			now = now-&gt;nxt[b];</span><br><span class="line">			now-&gt;cnt--;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">qry</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">		Trie *now = <span class="keyword">this</span>;</span><br><span class="line">		<span class="keyword">int</span> res = <span class="number">0</span> ;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> pos = <span class="number">31</span> ; pos &gt;= <span class="number">0</span> ; --pos)&#123;</span><br><span class="line">			<span class="keyword">bool</span> b = (x &gt;&gt; pos &amp; <span class="number">1</span>);</span><br><span class="line">			<span class="keyword">if</span>(now-&gt;nxt[!b] != <span class="literal">nullptr</span> &amp;&amp; now-&gt;nxt[!b]-&gt;cnt &gt; <span class="number">0</span>) </span><br><span class="line">				res |= (<span class="number">1</span> &lt;&lt; pos) , now = now-&gt;nxt[!b];</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(now-&gt;nxt[b] != <span class="literal">nullptr</span> &amp;&amp; now-&gt;nxt[b]-&gt;cnt &gt; <span class="number">0</span>) </span><br><span class="line">				now = now-&gt;nxt[b];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> res;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;*rt = <span class="keyword">new</span> Trie();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	IOS;</span><br><span class="line">	<span class="keyword">int</span> n , Q;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; Q;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> sn = <span class="built_in">sqrt</span>(n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span> ; i&lt;=n ; ++i) <span class="built_in">cin</span> &gt;&gt; a[i] , a[i] ^= a[i<span class="number">-1</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span> ; i&lt;Q ; ++i)&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; Qs[i].l &gt;&gt; Qs[i].r;</span><br><span class="line">		Qs[i].l--;<span class="comment">//處理區間 [l,r] 的時候可以 xor A[l-1]</span></span><br><span class="line">		Qs[i].bk = Qs[i].l/sn;</span><br><span class="line">		Qs[i].id = i;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(Qs , Qs + Q);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span> ; i&lt;Q ; ++i)&#123;</span><br><span class="line">		<span class="keyword">int</span> L = <span class="number">0</span> , R = <span class="number">0</span> , MX = <span class="number">0</span>;</span><br><span class="line">		<span class="comment">//把l在同一塊的丟進vector</span></span><br><span class="line">		<span class="built_in">vector</span>&lt;query&gt; tmp;</span><br><span class="line">		tmp.push_back(Qs[i]) , L = Qs[i].l;</span><br><span class="line">		<span class="keyword">while</span>(i+<span class="number">1</span> &lt; Q &amp;&amp; Qs[i+<span class="number">1</span>].bk == Qs[i].bk)&#123;</span><br><span class="line">			++i , tmp.push_back(Qs[i]) , L = max(L , Qs[i].l);</span><br><span class="line">		&#125;</span><br><span class="line">		R = L<span class="number">-1</span>; <span class="comment">//[CL , CL-1]</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span> ; j&lt;SZ(tmp) ; ++j)&#123;</span><br><span class="line">			<span class="comment">//l,r在同一塊直接處理，然後continue</span></span><br><span class="line">			<span class="keyword">if</span>(tmp[j].r/sn == tmp[j].l/sn)&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> k=tmp[j].l ; k&lt;=tmp[j].r ; ++k)&#123;</span><br><span class="line">					ans[tmp[j].id] = max(ans[tmp[j].id] , rt-&gt;qry(a[k]));</span><br><span class="line">					rt-&gt;add(a[k]);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> k=tmp[j].l ; k&lt;=tmp[j].r ; ++k)&#123;</span><br><span class="line">					rt-&gt;sub(a[k]);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//擴張右界</span></span><br><span class="line">			<span class="keyword">while</span>(R &lt; tmp[j].r)&#123;</span><br><span class="line">				++R , MX = max(MX , rt-&gt;qry(a[R])) , rt-&gt;add(a[R]);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//add [QL[i] , CL-1]</span></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> k=L<span class="number">-1</span> ; k&gt;=tmp[j].l ; --k)&#123;</span><br><span class="line">				ans[tmp[j].id] = max(ans[tmp[j].id] , rt-&gt;qry(a[k]));</span><br><span class="line">				rt-&gt;add(a[k]);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//sub [QL[i] , CL-1]</span></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> k=L<span class="number">-1</span> ; k&gt;=tmp[j].l ; --k)&#123;</span><br><span class="line">				rt-&gt;sub(a[k]);</span><br><span class="line">			&#125; </span><br><span class="line">			<span class="comment">//ans 要跟 MX 取 max</span></span><br><span class="line">			ans[tmp[j].id] = max(ans[tmp[j].id] , MX);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//clear Trie</span></span><br><span class="line">		<span class="keyword">while</span>(R&gt;=L) rt-&gt;sub(a[R]) , --R;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span> ; i&lt;Q ; ++i) <span class="built_in">cout</span> &lt;&lt; ans[i] &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>HaKkaz</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2021 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Trie/"># Trie</a>
+                    
+                        <a href="/tags/Competitive-Programming/"># Competitive Programming</a>
+                    
+                        <a href="/tags/TIOJ/"># TIOJ</a>
+                    
+                        <a href="/tags/Mo-s-algorithm/"># Mo's algorithm</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2023/02/02/APCS%E7%B7%B4%E7%BF%92%E6%96%B9%E6%B3%95%EF%BC%8C%E4%BD%BF%E7%94%A8Atcoder%E6%8F%90%E5%8D%87APCS%E5%AF%A6%E5%8A%9B/">APCS實作題練習方法，在Atcoder提升你的APCS實作！</a>
+            
+            
+            <a class="next" rel="next" href="/2021/01/15/TIOJ-2023-%E5%90%83%E5%90%83%E7%82%BA%E5%90%83%E5%90%83%EF%BC%8C%E6%98%AF%E5%90%83%E4%B9%9F/">TIOJ 2023 吃吃為吃吃，是吃也</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© HaKkaz | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a>
+        </span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

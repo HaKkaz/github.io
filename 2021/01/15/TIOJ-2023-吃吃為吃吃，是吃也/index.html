@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="google-site-verification" content="Wtp35xaWUpwb2oQZZDEs-_8z7BxYVCG_Xcd3xPspuM4" />
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="HaKkaz">
+
+
+
+
+
+<title>TIOJ 2023 吃吃為吃吃，是吃也 | HaKkaz&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+        
+    
+
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="HaKkaz's Blog" type="application/atom+xml">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">HaKkaz&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">HaKkaz&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">TIOJ 2023 吃吃為吃吃，是吃也</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">HaKkaz</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">January 15, 2021&nbsp;&nbsp;5:22:04</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%AB%B6%E6%8A%80%E7%A8%8B%E5%BC%8F/">競技程式</a>
+                            
+                        </span>
+                    
+                    <span id="/2021/01/15/TIOJ-2023-%E5%90%83%E5%90%83%E7%82%BA%E5%90%83%E5%90%83%EF%BC%8C%E6%98%AF%E5%90%83%E4%B9%9F/" class="leancloud-visitors view" data-flag-title="TIOJ 2023 吃吃為吃吃，是吃也">
+                      <em class="post-meta-item-text">Pageviews:</em>
+                      <i class="leancloud-visitors-count">loading</i>
+                    </span>
+                </div>
+            
+        </header>
+
+        
+        <div class="post-content">
+            <p>原題網址 : <a target="_blank" rel="noopener" href="https://tioj.ck.tp.edu.tw/problems/2023">https://tioj.ck.tp.edu.tw/problems/2023</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>給你 $n$ 種食材以及 $m$ 種好吃度為 $v_i$ 的食材搭配方式，<br>在這 $2^n-1$ 種非空食材組合當中如果一個組合包含第 $i$ 種搭配方式就會增加 $v_i$ 的好吃度。<br>現在你要依序做 $2^n-1$ 次種組合，第 $x$ 次做的組合若好吃度為 $sum_x$ 則<strong>總好吃度</strong>增加 $x \times sum_x$。<br>求在所有製作順序中最大的<strong>總好吃度</strong>。</p>
+<ul>
+<li>$n \le 22$</li>
+<li>$m \le 10^5$</li>
+<li>$-100 \le v_i \le 100$</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>首先我們會發現，只要求出所有組合的好吃度，再讓好吃度最小的先做就會是最大的<strong>總好吃度</strong>。<br>那問題就只剩下怎麼求出所有組合的好吃度了。</p>
+<p>首先我想到的是一個顯然TLE的作法，對於每種組合去枚舉他的所有子集合並把好吃度加起來。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span> ; i&lt;(<span class="number">1</span>&lt;&lt;n) ; ++i)&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=i ; j ; j=(j<span class="number">-1</span>)&amp;i)&#123;</span><br><span class="line">		tot[i] += dp[j];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不過往這方向想要優化似乎是不太可能了，於是就去求助學長了XD<br>不過學長只跟我說了是分治，我想了半天也想不出來，就把 bitmask 拿去畫成樹就做出來了ww</p>
+<p>首先我們把 $[0 , 2^n-1]$ 整個區間做分治，畫成圖如下。</p>
+<p><img src="image.png" alt="divide and conquer"></p>
+<p>我們會發現，如果我們把上圖每個節點分成兩半(紅線)，對於每個節點左邊第 $i$ 個 bitmask 都會是右邊第 $i$ 個 bitmask 的子集合，<br>因為左邊的已經幫我們把它涵蓋的子集合都加到它身上了，我們只要加上它就好，<br>所以我們只要讓每一層在節點右方的組合方式加上他左邊對應到的好吃度就可以得到最後每個組合的好吃度總和了。<br>(也就是箭頭右方的bitmask要加上箭頭左方bitmask當前的好吃度)</p>
+<h2 id="AC-Code"><a href="#AC-Code" class="headerlink" title="AC Code : "></a>AC Code : </h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = (<span class="number">1</span>&lt;&lt;<span class="number">22</span>);</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> dp[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> l , <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(l == r) <span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">int</span> mid = (l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	solve(l , mid);</span><br><span class="line">	solve(mid+<span class="number">1</span> , r);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=mid+<span class="number">1</span> ; i&lt;=r ; ++i) dp[i] += dp[l+(i-mid<span class="number">-1</span>)];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>),<span class="built_in">cin</span>.tie(<span class="number">0</span>),<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">int</span> n , m ;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m ;</span><br><span class="line">	<span class="keyword">while</span>(m--)&#123;</span><br><span class="line">		<span class="built_in">string</span> s; </span><br><span class="line">		<span class="keyword">int</span> val;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; s &gt;&gt; val;</span><br><span class="line">		<span class="keyword">int</span> num=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span> ; i&lt;n ; ++i)&#123;</span><br><span class="line">			<span class="keyword">if</span>(s[i] == <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">				num |= (<span class="number">1</span>&lt;&lt;(n-i<span class="number">-1</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		dp[num] = val;</span><br><span class="line">	&#125;</span><br><span class="line">	solve(<span class="number">0</span>,(<span class="number">1</span>&lt;&lt;n)<span class="number">-1</span>);</span><br><span class="line">	sort(dp+<span class="number">1</span> , dp+(<span class="number">1</span>&lt;&lt;n));</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0ll</span> ;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span> ; i&lt;(<span class="number">1</span>&lt;&lt;n) ; ++i)&#123;</span><br><span class="line">		ans += <span class="number">1ll</span> * i * dp[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>HaKkaz</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2021 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Competitive-Programming/"># Competitive Programming</a>
+                    
+                        <a href="/tags/TIOJ/"># TIOJ</a>
+                    
+                        <a href="/tags/Divide-and-Conquer/"># Divide and Conquer</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/01/18/TIOJ-1902/">TIOJ 1902 「殿仁．王，不認識，誰啊？」，然後他就死了……</a>
+            
+            
+            <a class="next" rel="next" href="/2021/01/09/%E7%89%B9%E6%AE%8A%E9%81%B8%E6%9D%90-%E5%BF%83%E5%BE%97%E5%88%86%E4%BA%AB-%E8%B3%87%E8%A8%8A%E5%B7%A5%E7%A8%8B%E5%AD%B8%E7%B3%BB/">特殊選才 心得分享 (資訊工程學系)</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© HaKkaz | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a>
+        </span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

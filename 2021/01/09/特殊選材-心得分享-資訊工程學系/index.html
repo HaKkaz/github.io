@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="google-site-verification" content="Wtp35xaWUpwb2oQZZDEs-_8z7BxYVCG_Xcd3xPspuM4" />
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="HaKkaz">
+
+
+
+
+
+<title>特殊選才 心得分享 (資訊工程學系) | HaKkaz&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+        
+    
+
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="HaKkaz's Blog" type="application/atom+xml">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">HaKkaz&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">HaKkaz&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">特殊選才 心得分享 (資訊工程學系)</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">HaKkaz</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">January 9, 2021&nbsp;&nbsp;1:19:24</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%94%9F%E6%B4%BB%E5%88%86%E4%BA%AB/">生活分享</a>
+                            
+                        </span>
+                    
+                    <span id="/2021/01/09/%E7%89%B9%E6%AE%8A%E9%81%B8%E6%9D%90-%E5%BF%83%E5%BE%97%E5%88%86%E4%BA%AB-%E8%B3%87%E8%A8%8A%E5%B7%A5%E7%A8%8B%E5%AD%B8%E7%B3%BB/" class="leancloud-visitors view" data-flag-title="特殊選才 心得分享 (資訊工程學系)">
+                      <em class="post-meta-item-text">Pageviews:</em>
+                      <i class="leancloud-visitors-count">loading</i>
+                    </span>
+                </div>
+            
+        </header>
+
+        
+        <div class="post-content">
+            <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>在本篇作者還是高中的時候，特殊選才的相關資訊非常的少，高三時面對即將到來的面試非常不知所措，但好作者有認真準備面試以及備審資料，才得以突破重圍錄取理想校系，也因此本文想要分享給未來想要資工系特殊選才或是在 APCS 取得不錯成績的學弟妹參考。</p>
+<h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><ul>
+<li>目前於 <strong>AnnCode！安可程式</strong> 擔任 APCS 家教，詳細經歷請查看<a href="https://hakkaz.github.io/about">連結</a></li>
+<li>APCS 實作滿級分，參加程式競賽多年、教學經驗豐富，已帶領許多學生在 APCS 取得佳績</li>
+<li><a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100089378332482"><strong>AnnCode！安可程式</strong></a> 是專業 APCS 家教團隊，歡迎點擊連結了解更多！</li>
+</ul>
+<h2 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h2><p>面試結果依照面試時間排序，第一個成大資工甲組是最早面試的校系。</p>
+<ol>
+<li><font color="#6F4E37"><strong>成大資工甲組 備取3 (O)</strong></font></li>
+<li><font color="#6F4E37"><strong>師大資工 備取3 (O)</strong></font></li>
+<li><font color="#6F4E37"><strong>中央資工 備取6 (O)</strong></font></li>
+<li><font color="#6F4E37"><strong>清大資工 正取</strong></font></li>
+<li><font color="#6F4E37"><strong>交大資工 備取2 (O)</strong></font></li>
+<li><del><font color="#6F4E37"><strong>清大不分系 初試未過</strong></font></del></li>
+</ol>
+<p>(依照面試順序排序，&#39;O&#39;代表有備取到)</p>
+<h2 id="自我評估"><a href="#自我評估" class="headerlink" title="自我評估"></a>自我評估</h2><p><font color="#6F4E37"><strong>先大概說一下我自己的狀況，讀者在看後面的時候也比較知道參考價值高不高</strong></font></p>
+<p>因為從高一就篤定走特選的管道，所以評估其實也只是講給讀者聽，因為不管評估如何我都還是會丟特選XD</p>
+<p>我的在校成績非常差，全校最後一名、段考沒去考，但特殊選才大部分的校系不太在乎你的在校成績，除了聽說成大很在乎以外其他都不太在乎的樣子(?)。<br>我從進到板中的高一開始就持續在演算法競賽上努力，競賽成績截至特殊選才為止大概是同屆的前十五名，扣掉保送跟沒丟特選的人大概有第五左右。<br>另外我的個性是比較外向的，所以在面試上我也沒有太多的擔憂，更希望可以藉此彌補備審的分數(以結果來說也的確面試都比書審來的高分)。</p>
+<p>綜上所述，感覺要上一間學校是綽綽有餘的，但就是不一定會有清交成，因為除了算法競賽以外，還有各種資訊專長的人會來特殊選才管道。</p>
+<h2 id="備審內容"><a href="#備審內容" class="headerlink" title="備審內容 "></a>備審內容 </h2><p><font color="#6F4E37"><strong>我的得獎紀錄可以點擊 <a href="https://hakkaz.github.io/about/#%E5%BE%97%E7%8D%8E%E7%B4%80%E9%8C%84">這裡</a> 看看喔~</strong></font></p>
+<p>我的備審完全沒有美編設計，只有白底黑字這樣的 Word 檔案，然後用紅字及粗體標示了一些自己的獎項跟關鍵字詞，我認為<strong>清交的教授應該都不會特別注重設計這方面</strong>，從初審分數跟放榜結果上應該可以反映出來，其他學校我就不確定了。</p>
+<p>格式每間學校略有不同，但我都是複製貼上<strong>改學校名稱、申請動機</strong>而已，格式如下:</p>
+<p><font color="#6F4E37"><strong>自傳</strong></font></p>
+<ul>
+<li><strong>如何啟發對資訊領域的興趣</strong></li>
+<li><strong>如何開始自學程式</strong></li>
+<li><strong>開始奧林匹亞的契機</strong></li>
+<li><strong>高中重考的原因</strong></li>
+<li><strong>得獎經歷</strong></li>
+<li><strong>社團經歷</strong></li>
+<li><strong>其他經歷</strong></li>
+<li><strong>對自己的期許</strong></li>
+</ul>
+<p><font color="#6F4E37"><strong>申請動機</strong></font></p>
+<ul>
+<li><strong>各校大有不同，每間學校我都有仔細研究其優缺點</strong></li>
+</ul>
+<p><font color="#6F4E37"><strong>讀書計畫</strong></font></p>
+<ul>
+<li><strong>近程(正式錄取~大學入學)</strong></li>
+<li><strong>中程(大學四年)</strong></li>
+<li><strong>長程(大學畢業)</strong></li>
+</ul>
+<h2 id="備審準備方向"><a href="#備審準備方向" class="headerlink" title="備審準備方向"></a>備審準備方向</h2><p><strong>以下依序是我覺得資工系備審的重要內容。</strong></p>
+<ol>
+<li><p><font color="#6F4E37"><strong>逆境向上</strong></font><br> 這真的很重要，相信沒有人不喜歡逆境向上的人。</p>
+</li>
+<li><p><font color="#6F4E37"><strong>得獎紀錄、檢定成績</strong></font></p>
+<ul>
+<li>得獎紀錄是證明你過去的努力以及現在的能力的有力證明。</li>
+<li>諸如：TOI 資訊奧林匹亞、APCS 程式檢定及各類英文檢定，都可以放入備審資料喔！</li>
+</ul>
+</li>
+<li><p><font color="#6F4E37"><strong>自學能力</strong></font><br> 有些教授很看重自學能力，在資工系有許多知識以及技術在課堂上都不會碰到，需要自己摸索以及與同儕討論切磋。</p>
+</li>
+<li><p><font color="#6F4E37"><strong>附加價值</strong></font><br> 這點是學長提醒我的，我覺得很有道理，除了自身價值外，你還能帶給這間學校甚麼額外的附加價值？你有甚麼技術可以幫助到學校嗎？</p>
+</li>
+<li><p><font color="#6F4E37"><strong>成長經歷</strong></font><br> 簡潔有力的描寫成長經歷，可以讓教授更了解你，增加教授對你的印象以及你的備審資料的可信度。</p>
+</li>
+<li><p><font color="#6F4E37"><strong>其它</strong></font><br> 寫點你自己想寫的東西吧!</p>
+</li>
+</ol>
+<h2 id="面試準備技巧"><a href="#面試準備技巧" class="headerlink" title="面試準備技巧"></a>面試準備技巧</h2><p><strong>我認為準備面試非常重要，即使你講的話都是真的，沒有實際演練過還是會很生疏、不流暢。除此之外，記得多報一、兩間面試時間比較早的學校練習面試！！</strong></p>
+<p>除了一些專業問題當場教授會給你題目以外，你一定要對你備審資料有充足的了解，當然你備審裡面的內容也都得是貨真價實的才行。</p>
+<p>我提出一些我認為很需要準備的面試問題，以我自己為例子：</p>
+<ol>
+<li><p>因為我高二資訊全國賽三等獎，但是高三沒得獎，所以我在去交大面試之前就已經想好要怎麼解釋自己失常了。</p>
+</li>
+<li><p>我的高中在校成績很差，是全校倒數的那種，所以這一定也會成為教授好奇的點。</p>
+</li>
+<li><p>如果你上了其他學校你會怎麼選擇? 這個世紀大難題有很多種回答方法，看你要誠實還是說謊我覺得都可以準備一下XD<br> (不過我很幸運的除了成大沒人問我這個問題)。</p>
+</li>
+<li><p>專業問題相關，以我打演算法競賽為例，他會問 : 最喜歡的算法? 覺得最困難的題目?</p>
+</li>
+</ol>
+<p>而我準備面試的方法是在朋友面前直接練習自我介紹，先打好一些大綱，但沒有背起來，因為我覺得就算背起來一緊張也就忘光了。</p>
+<h2 id="各校經驗分享"><a href="#各校經驗分享" class="headerlink" title="各校經驗分享"></a>各校經驗分享</h2><h3 id="成大資工甲組"><a href="#成大資工甲組" class="headerlink" title="成大資工甲組"></a>成大資工甲組</h3><p>聽說成大資工很在意在校成績，成大不希望你成績太差勁，怕收你進去你念不到畢業證書，面試的時候教授也有很明確地跟我點出資工系不是只要會寫程式就好，而教授講的也完全正確，讀資工系數學、英文也非常重要。</p>
+<p>流程大概是:</p>
+<ol>
+<li><p><font color="#6F4E37"><strong>自我介紹</strong></font></p>
+</li>
+<li><p><font color="#6F4E37"><strong>教授問專業問題</strong></font></p>
+<ul>
+<li><p>第一題</p>
+<ul>
+<li>給定一長度為 $N$ 的數列，找出數列中的絕對眾數（保證存在）。</li>
+<li>我當初說了 $O(NlogN)$ 的解，教授問我能不能再更好我就講了一些小優化，但實際上可以 $O(N)$ ，我當時沒想到。</li>
+</ul>
+</li>
+<li><p>第二題</p>
+<ul>
+<li>一開始黑球白球各有五百顆在袋子中，每次拿出兩顆球不放回，如果拿出的兩顆球同色就放一顆白球回去，如果兩個不同放黑球回去，問最後剩下白球的機率（題目不是很確定）。</li>
+<li>我完全沒有回答，我直接跟教授說我不會。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><font color="#6F4E37"><strong>教授問一些關於你的問題</strong></font></p>
+<ul>
+<li><p>為何重考高中、重考的決心</p>
+</li>
+<li><p>如果比賽進展不順利怎麼辦</p>
+</li>
+<li><p>對大學課程瞭不瞭解</p>
+</li>
+<li><p>板中的競賽風氣</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>我覺得教授問的問題都挺有深度的，我很喜歡。<br>最後備取3其實沒有很意外，因為聽說我書審分數是12個進複試最低的，所以其實已經利用面試搬回不少成績了&gt;&lt;</p>
+<h3 id="師大資工"><a href="#師大資工" class="headerlink" title="師大資工"></a>師大資工</h3><p>師大資工的面試比較沒壓力，分兩間教室，各十分鐘。</p>
+<p>流程大概是</p>
+<ol>
+<li><p><font color="#6F4E37"><strong>自我介紹</strong></font></p>
+</li>
+<li><p><font color="#6F4E37"><strong>教授問專業問題</strong></font></p>
+<ul>
+<li><p>提出一個排序演算法<br>(我講Bubble sort)</p>
+</li>
+<li><p>指標是甚麼</p>
+</li>
+</ul>
+</li>
+<li><p><font color="#6F4E37"><strong>教授問一些關於你的問題</strong></font></p>
+<ul>
+<li><p>我當初重考的打算</p>
+</li>
+<li><p>怎麼學習程式</p>
+</li>
+</ul>
+</li>
+<li><p><font color="#6F4E37"><strong>教授要你問他們問題(關於師大)</strong></font></p>
+<ul>
+<li>我問說可以參加甚麼演算法相關的活動、出題、驗題</li>
+</ul>
+</li>
+<li><p><font color="#6F4E37"><strong>進第二間教室後大概是相同的流程</strong></font></p>
+</li>
+</ol>
+<p>聽說你成績太好他會叫你去學測的APCS組，但我沒有這個問題(X)</p>
+<h3 id="中央資工"><a href="#中央資工" class="headerlink" title="中央資工"></a>中央資工</h3><p>聽說中央的面試順序是依照初試成績排的，我好像排第七的樣子。</p>
+<p>面試不到10分鐘的樣子，一間教室三個教授。</p>
+<p>面試的時候只問我有沒有考APCS跟在校成績為甚麼不好，備審上面都有寫，讓我感覺是來混薪水或是懶得看學生備審，沒有認真選才，抱歉講的不是很好聽(X)。<br>(也可能我是垃圾他們拿我濫竽充數複試人數)</p>
+<h3 id="清大資工"><a href="#清大資工" class="headerlink" title="清大資工"></a>清大資工</h3><p>因為NPSC決賽跟面試撞期，所以我並沒有去清大面試而是在家用 Skype 面試。</p>
+<p>教授有三位，貌似跟現場面試不同，參考價值較低。</p>
+<p>流程如下:</p>
+<ol>
+<li><p><font color="#6F4E37"><strong>自我介紹</strong></font></p>
+</li>
+<li><p><font color="#6F4E37"><strong>專業問題</strong></font></p>
+<ul>
+<li><p>我被問直條圖上最大矩形面積。<br>(我先講 $O(N^2)$ 的枚舉左右界+稀疏表，再提出單調隊列 $O(N)$ 的作法)</p>
+</li>
+<li><p>同學被問帶權重N皇后問題<br>(位元DP 、 KM算法都可)</p>
+</li>
+</ul>
+</li>
+<li><p><font color="#6F4E37"><strong>問我NPSC相關問題</strong></font></p>
+<ul>
+<li>覺得難度如何</li>
+<li>最喜歡的題目</li>
+<li>最後名次</li>
+</ul>
+</li>
+<li><p><font color="#6F4E37"><strong>未來競賽規劃</strong></font></p>
+<ul>
+<li>全國賽有沒有進</li>
+<li>TOI初選</li>
+<li>大學ICPC</li>
+</ul>
+</li>
+</ol>
+<h3 id="交大資工"><a href="#交大資工" class="headerlink" title="交大資工"></a>交大資工</h3><p>流程如下:</p>
+<ol>
+<li><p><font color="#6F4E37"><strong>自我介紹</strong></font></p>
+</li>
+<li><p><font color="#6F4E37"><strong>教授發問</strong></font></p>
+<ul>
+<li><p>當初重考到板中的契機</p>
+</li>
+<li><p>打比賽花很多時間的題目</p>
+</li>
+<li><p>如果遇到不會的問題會怎麼處理</p>
+</li>
+<li><p>有沒有做過專案</p>
+</li>
+<li><p>全國賽怎麼退步了</p>
+</li>
+<li><p>還會不會打下學期資奧初選</p>
+</li>
+</ul>
+</li>
+<li><p><font color="#6F4E37"><strong>專業問題</strong></font></p>
+<p> 問<code>test()</code>回傳值。</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="title">test</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> rev = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(n &gt; <span class="number">0</span>)&#123;</span><br><span class="line">		rev &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>((n &amp; <span class="number">1</span>) == <span class="literal">true</span>)&#123;</span><br><span class="line">			rev ^= <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> rev;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">unsgined <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> n = <span class="number">11</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; test(n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="各校取才方向"><a href="#各校取才方向" class="headerlink" title="各校取才方向"></a>各校取才方向</h2><ol>
+<li>清華大學 : 演算法</li>
+<li>交通大學 : 演算法、資安</li>
+<li>中央大學 : <del>不清楚</del></li>
+<li>師範大學 : 演算法、(成績不要太好)</li>
+<li>成功大學 : 資安、科展、演算法、專案 + 成績要好一點</li>
+</ol>
+<p><strong>以上僅供參考，如果你有過人之處我相信無論大學選才方向如何都會看上你的!</strong></p>
+<h2 id="給學弟妹的建議"><a href="#給學弟妹的建議" class="headerlink" title="給學弟妹的建議"></a>給學弟妹的建議</h2><p>如果你對資訊領域有<strong>熱忱</strong>，只要願意<strong>投入時間</strong>在資訊相關的領域，並且<strong>認真學習、努力</strong>，肯定會有成果的。<br>我是一個天分並不高的人，沒讀過數理資優班甚至考不上，雖然競賽成績不是很好，但是撇掉清大正取，師大成大我還是有備取到。</p>
+<p>那我全國三等獎正取清大的例子我覺得還是看看就好，一方面我這屆許多進過資奧一階的都沒投特殊選材(大概3~到4個)，加上我認為我的面試能力挺好的，我不太會怯場，所以才能苟且正取清大。</p>
+<h2 id="心得感想"><a href="#心得感想" class="headerlink" title="心得感想"></a>心得感想</h2><p>打從重考到錄取清大的那刻，真的可以說是一路坎坷，競賽成績不如預期、也總覺得自己不夠聰明，不過雖然坎坷卻又很快樂，每天都能研究自己喜歡的算法、寫喜歡的題目、跟同樣喜歡算法的人交流，真的是很快樂的高中生活。</p>
+<p>不打算在這篇文講太多，等之後會發長文來講高中生活。</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p><strong>特殊選材是一條窄門，但資訊工程系的特殊選才稍微寬了一點點</strong>，並沒有想像中的困難，把目標放在清交可能困難一些也很需要運氣，但如果只是中字輩、師大甚至其他學校其實相對簡單很多。</p>
+<p>希望每一位對資訊有興趣，或是對其它領域有興趣的學弟妹都能追尋屬於自己的夢，不要被教育體制限制發揮人生光芒的機會!</p>
+<p><strong>另外我想說一句我一直以來都放在心上的一句話 :</strong></p>
+<blockquote>
+<p><strong>「玩遊戲之前，先搞清楚遊戲規則。」</strong></p>
+</blockquote>
+<p>我當初先研究了許多升學管道，APCS組、特殊選才、資奧薦送，才勇敢地踏上這條路搏鬥，千萬不要搞不清楚狀況就貿然行事，搞得自己最後沒大學可以念。</p>
+<h2 id="文章作者"><a href="#文章作者" class="headerlink" title="文章作者"></a>文章作者</h2><p>全文由 <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100089378332482">AnnCode！安可程式教育</a> 撰寫，轉載文章請註明出處。</p>
+<p><strong>AnnCode！安可程式教育</strong>是專業 APCS 家教團隊，超強師資陣容，每位老師皆為 APCS 實作滿級分高手，並且曾經參與 「TOI 高中資訊奧林匹亞競賽」、「ICPC 國際大學生程式設計競賽」等程式競賽，絕對是不可多得的一流師資。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>HaKkaz</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2021 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E7%94%9F%E6%B4%BB%E8%A8%98%E4%BA%8B/"># 生活記事</a>
+                    
+                        <a href="/tags/%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB/"># 經驗分享</a>
+                    
+                        <a href="/tags/%E9%9D%A2%E8%A9%A6%E5%88%86%E4%BA%AB/"># 面試分享</a>
+                    
+                        <a href="/tags/APCS/"># APCS</a>
+                    
+                        <a href="/tags/%E7%89%B9%E6%AE%8A%E9%81%B8%E6%89%8D/"># 特殊選才</a>
+                    
+                        <a href="/tags/%E8%B3%87%E8%A8%8A%E5%A5%A7%E6%9E%97%E5%8C%B9%E4%BA%9E/"># 資訊奧林匹亞</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/01/15/TIOJ-2023-%E5%90%83%E5%90%83%E7%82%BA%E5%90%83%E5%90%83%EF%BC%8C%E6%98%AF%E5%90%83%E4%B9%9F/">TIOJ 2023 吃吃為吃吃，是吃也</a>
+            
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© HaKkaz | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a>
+        </span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

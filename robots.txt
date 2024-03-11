@@ -1,0 +1,9 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Allow: /about/ 
+Allow: /2021/
+Sitemap: https://hakkaz.github.io/sitemap.xml
